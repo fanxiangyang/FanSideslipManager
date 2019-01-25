@@ -15,6 +15,13 @@
 		663DCF8321F6AB890039B9B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DCF8221F6AB890039B9B0 /* main.m */; };
 		663DCF8D21F6AB890039B9B0 /* FanSideslipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DCF8C21F6AB890039B9B0 /* FanSideslipTests.m */; };
 		663DCF9821F6AB890039B9B0 /* FanSideslipUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DCF9721F6AB890039B9B0 /* FanSideslipUITests.m */; };
+		663DCFA821F6AEFD0039B9B0 /* FanSideslipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DCFA721F6AEFD0039B9B0 /* FanSideslipManager.m */; };
+		663DCFAC21F6B1510039B9B0 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 663DCFAA21F6B1500039B9B0 /* 1.jpg */; };
+		663DCFAD21F6B1510039B9B0 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 663DCFAB21F6B1510039B9B0 /* 2.jpg */; };
+		663DCFAF21F6B2E90039B9B0 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 663DCFAE21F6B2E90039B9B0 /* 3.jpg */; };
+		663DCFB221F6B32F0039B9B0 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DCFB121F6B32F0039B9B0 /* LeftViewController.m */; };
+		663DCFB521F6B33C0039B9B0 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DCFB421F6B33C0039B9B0 /* RightViewController.m */; };
+		663DCFB821F880360039B9B0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DCFB721F880360039B9B0 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,17 @@
 		663DCF9321F6AB890039B9B0 /* FanSideslipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FanSideslipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		663DCF9721F6AB890039B9B0 /* FanSideslipUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FanSideslipUITests.m; sourceTree = "<group>"; };
 		663DCF9921F6AB890039B9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		663DCFA621F6AEFD0039B9B0 /* FanSideslipManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FanSideslipManager.h; sourceTree = "<group>"; };
+		663DCFA721F6AEFD0039B9B0 /* FanSideslipManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FanSideslipManager.m; sourceTree = "<group>"; };
+		663DCFAA21F6B1500039B9B0 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		663DCFAB21F6B1510039B9B0 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		663DCFAE21F6B2E90039B9B0 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		663DCFB021F6B32F0039B9B0 /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		663DCFB121F6B32F0039B9B0 /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		663DCFB321F6B33C0039B9B0 /* RightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
+		663DCFB421F6B33C0039B9B0 /* RightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		663DCFB621F880360039B9B0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		663DCFB721F880360039B9B0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +99,7 @@
 		663DCF6721F6AB880039B9B0 = {
 			isa = PBXGroup;
 			children = (
+				663DCFA521F6AED70039B9B0 /* Classes */,
 				663DCF7221F6AB880039B9B0 /* FanSideslip */,
 				663DCF8B21F6AB890039B9B0 /* FanSideslipTests */,
 				663DCF9621F6AB890039B9B0 /* FanSideslipUITests */,
@@ -101,10 +120,17 @@
 		663DCF7221F6AB880039B9B0 /* FanSideslip */ = {
 			isa = PBXGroup;
 			children = (
+				663DCFA921F6B14B0039B9B0 /* Images */,
 				663DCF7321F6AB880039B9B0 /* AppDelegate.h */,
 				663DCF7421F6AB880039B9B0 /* AppDelegate.m */,
 				663DCF7621F6AB880039B9B0 /* ViewController.h */,
 				663DCF7721F6AB880039B9B0 /* ViewController.m */,
+				663DCFB021F6B32F0039B9B0 /* LeftViewController.h */,
+				663DCFB121F6B32F0039B9B0 /* LeftViewController.m */,
+				663DCFB321F6B33C0039B9B0 /* RightViewController.h */,
+				663DCFB421F6B33C0039B9B0 /* RightViewController.m */,
+				663DCFB621F880360039B9B0 /* SecondViewController.h */,
+				663DCFB721F880360039B9B0 /* SecondViewController.m */,
 				663DCF7921F6AB880039B9B0 /* Main.storyboard */,
 				663DCF7C21F6AB890039B9B0 /* Assets.xcassets */,
 				663DCF7E21F6AB890039B9B0 /* LaunchScreen.storyboard */,
@@ -130,6 +156,25 @@
 				663DCF9921F6AB890039B9B0 /* Info.plist */,
 			);
 			path = FanSideslipUITests;
+			sourceTree = "<group>";
+		};
+		663DCFA521F6AED70039B9B0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				663DCFA621F6AEFD0039B9B0 /* FanSideslipManager.h */,
+				663DCFA721F6AEFD0039B9B0 /* FanSideslipManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		663DCFA921F6B14B0039B9B0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				663DCFAE21F6B2E90039B9B0 /* 3.jpg */,
+				663DCFAA21F6B1500039B9B0 /* 1.jpg */,
+				663DCFAB21F6B1510039B9B0 /* 2.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				663DCF8021F6AB890039B9B0 /* LaunchScreen.storyboard in Resources */,
+				663DCFAC21F6B1510039B9B0 /* 1.jpg in Resources */,
+				663DCFAD21F6B1510039B9B0 /* 2.jpg in Resources */,
+				663DCFAF21F6B2E90039B9B0 /* 3.jpg in Resources */,
 				663DCF7D21F6AB890039B9B0 /* Assets.xcassets in Resources */,
 				663DCF7B21F6AB880039B9B0 /* Main.storyboard in Resources */,
 			);
@@ -262,6 +310,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663DCFA821F6AEFD0039B9B0 /* FanSideslipManager.m in Sources */,
+				663DCFB221F6B32F0039B9B0 /* LeftViewController.m in Sources */,
+				663DCFB521F6B33C0039B9B0 /* RightViewController.m in Sources */,
+				663DCFB821F880360039B9B0 /* SecondViewController.m in Sources */,
 				663DCF7821F6AB880039B9B0 /* ViewController.m in Sources */,
 				663DCF8321F6AB890039B9B0 /* main.m in Sources */,
 				663DCF7521F6AB880039B9B0 /* AppDelegate.m in Sources */,
@@ -438,6 +490,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NW3X9NZ9UP;
 				INFOPLIST_FILE = FanSideslip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NW3X9NZ9UP;
 				INFOPLIST_FILE = FanSideslip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

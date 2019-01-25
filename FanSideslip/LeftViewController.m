@@ -1,0 +1,118 @@
+//
+//  LeftViewController.m
+//  FanSideslip
+//
+//  Created by 向阳凡 on 2019/1/22.
+//  Copyright © 2019 向阳凡. All rights reserved.
+//
+
+#import "LeftViewController.h"
+#import "FanSideslipManager.h"
+
+@interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)NSMutableArray *dataArray;
+
+@end
+
+@implementation LeftViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self configUI];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.navigationController) {
+        self.navigationController.navigationBar.hidden=YES;
+    }
+    if ([FanSideslipManager shareManager].autoHidden) {
+        [FanSideslipManager shareManager].tapControl.hidden=NO;
+    }
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if (self.navigationController) {
+        self.navigationController.navigationBar.hidden=NO;
+    }
+    if ([FanSideslipManager shareManager].autoHidden) {
+        [FanSideslipManager shareManager].tapControl.hidden=YES;
+    }
+}
+- (void)configUI{
+    self.dataArray=[@[@"跳转下一页",@"隐藏抽屉主场景跳转",@"系统安全",@"系统缓存",@"设置"] mutableCopy];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width*0.7, self.view.frame.size.height) style:UITableViewStyleGrouped];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIImageView new];
+    self.tableView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:self.tableView];
+    
+    //添加约束，适配横屏
+    _tableView.translatesAutoresizingMaskIntoConstraints=NO;
+    //字典里面的变量可以在格式字符里面替代
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_tableView]" options:0 metrics:@{} views:@{@"_tableView":_tableView}]];
+    NSLayoutConstraint *constraint=[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.7 constant:0];
+    [self.view addConstraint:constraint];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_tableView]-0-|" options:0 metrics:@{} views:@{@"_tableView":_tableView}]];
+
+}
+#pragma mark - tableview Delegate  DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataArray.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    }
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text=self.dataArray[indexPath.row];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(indexPath.row==0){
+        UIViewController *vc=[[UIViewController alloc]init];
+        vc.view.backgroundColor=[UIColor whiteColor];
+        vc.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"3.jpg"]];
+
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row==1){
+        [[FanSideslipManager shareManager] hideSideslipNOAnimation];
+        [FanSideslipManager shareManager].sideslipcControlBlock(1, nil);
+    }else if(indexPath.row==2){
+        
+    }
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    CGPoint touchPoint=[[touches anyObject]locationInView:self.view];
+    if (touchPoint.x>[[UIScreen mainScreen] bounds].size.width*0.7) {
+        //侧边栏消失
+        [[FanSideslipManager shareManager]hideSideslip];
+    }
+}
+-(void)dealloc{
+    NSLog(@"left dealloc");
+}
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

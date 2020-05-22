@@ -61,6 +61,7 @@ UINavigationController *nav1=[[UINavigationController alloc]initWithRootViewCont
     不能铺满屏
  3.我写了两个回调，可以自由定制动画，自由控制界面间传值
  4.如果开启autoHidden=YES，一定要控制好self.tapControl显示和隐藏（还是不开启这个功能好）
+ 5.如果支持横竖屏，一定要注意自己控制UI的约束关系
 
 ```
 Like(喜欢)

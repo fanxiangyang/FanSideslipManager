@@ -73,6 +73,12 @@ typedef NS_ENUM(NSUInteger,FanSideslipType){
 
 
 
+/**
+ 显示和隐藏的回调
+
+ @param sideslipType 抽屉类型
+ @param isShow 是否显示
+ */
 typedef void(^FanSideslipBlock)(FanSideslipType sideslipType,BOOL isShow);
 
 /**
